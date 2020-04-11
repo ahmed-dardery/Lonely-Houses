@@ -30,6 +30,7 @@ function initialization(){
 function newGame() {
     myBoard = new Board(CELL_COUNT, [25, 25, 750, 750]);
     myGameState = gameState.running;
+    updateGame();
 }
 
 function onMouseClick(e) {
