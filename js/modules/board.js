@@ -57,9 +57,7 @@ export default class Board {
     getState(ind) {
         return this.cells[ind];
     }
-
-    // returns True if the selection was successful
-
+    
     checkCell(ind) {
         if (this.cells[ind] <= cellstate.house1) {
             this.cellsValid[ind] = true;
@@ -79,9 +77,7 @@ export default class Board {
             if (ni < 0 || ni >= this._height || nj < 0 || nj >= this._width) continue;
             around[this.cells[ni * this._width + nj]] = true;
         }
-        this.cellsValid[ind] = false;
-
-        return !(around.slice(1, this.cells[ind]).includes(false))
+        this.cellsValid[ind] = !(around.slice(1, this.cells[ind]).includes(false))
     }
 
     triggerCell(ind, reverse) {
